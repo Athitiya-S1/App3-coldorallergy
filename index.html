@@ -50,7 +50,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
 	//Increases the count for cold//
         }
 
-	function getResult() {
+	function getResult(){
 	//Dsiplays and calculates percentages//
 		var allergyPercent=(allergy_count/totalQuestions)*100;
 		//Divides allergy count by 8(number of question) and turns into percentage//
@@ -59,20 +59,22 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
 		var totalPercent = allergyPercent + coldPercent;}
 		//I noticed that if you go to a previous question and answer the percentage exceed the 100 percent value. So I looked up how to fix this//
 		//Check if combined total is not equal to 100//
-    		 if (totalPercent !== 100) {
+    		 if (totalPercent !== 100){
 		//Functions to fix percentages if they do not equal 100//
         		var scale = 100 / totalPercent;
 			 //Scales both variables so they equal to 100//
        			allergyPercent *= scale;
 			coldPercent *= scale;
 		}
-	{var resultText = document.getElementById("resultText");}
+	
+	var resultText = document.getElementById("resultText");
 		//Function to display the results//
 		{resultText.innerHTML = "Probability it is allergies = " + allergyPercent.toFixed(2) + "%<br> Probability it is a cold = " + coldPercent.toFixed(2) + "%";
 		//Added the percentage signs//
 		//Tells the system how to display results. Two decimal points enabled//
+		 
 	}
-	{function restartTest()
+	function restartTest(){
 	//Function to restart the test
  		allergy_count = 0;
 		cold_count = 0;
