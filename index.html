@@ -61,15 +61,15 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
     		 if (totalPercent !== 100) {
 		//Functions to fix percentages if they do not equal 100//
         		var scale = 100 / totalPercent;
-			 //Scales both vairables so they equal to 100//
+			 //Scales both variables so they equal to 100//
        			allergyPercent *= scale;
 			coldPercent *= scale;
 		}
 		var resultText = document.getElementById("resultText");
-		//Function to display the results. Grammar is very important here! It is also used in the results page//
-        resultText.innerHTML = "Probability it is allergies = " + allergyPercent.toFixed(2) + "%<br> Probability it is a cold = " + coldPercent.toFixed(2) + "%";
+		//Function to display the results//
+		{resultText.innerHTML = "Probability it is allergies = " + allergyPercent.toFixed(2) + "%<br> Probability it is a cold = " + coldPercent.toFixed(2) + "%";
 		//Added the percentage signs//
-		//Tells the system how to display results. Two decimal points allowed//
+		//Tells the system how to display results. Two decimal points enabled//
 	}
 	function restartTest() {
 	//Function to restart the test
