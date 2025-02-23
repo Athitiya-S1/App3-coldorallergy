@@ -58,27 +58,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//In the next case, it is used to declare the value of cold starts at 0//
 
  	//functions to compute allergy and cold counts when users click on buttons accordingly//
-	{ function allergyAdd() }
+	 function allergyAdd(){
+	
+            allergy_count = allergy_count + 1;
+		alert(allergy_count);}
 
 /*This button increases the count for allergy when user presses button associated with
 allergy symptoms. */
-{
-	
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
 
-        }
 		//This button increases the count for cold when user presses button associated with cold symptom//
         function coldAdd(){
             cold_count = cold_count + 1;
         }
 	
 //Put the code you want to execute between {}//
-	{function showResult()}
-	
+	function showResult(){
+		var allergyPercent = (allergy_count/8)*100
+   	var coldPercent = (cold_count/8)*100}
 	        // Calculate percentages//
-	var allergyPercent = (allergy_count/8)*100
-   	var coldPercent = (cold_count/8)*100
 
 //this code establishes the content of the results by setting the formula.//
 
