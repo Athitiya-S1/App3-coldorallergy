@@ -34,51 +34,56 @@ I procrastinated on this assignment by doing it the night before. I'll never do 
 
 
 <script>
-	//This code declares a total number of questions and inital values for allergy cold indication.//
-	{ var allergy_count = 0;
-        var cold_count = 0; }
-//var declares variables, values, and what you want the variable to do//
-	//In this case, it is used to declare the value of allergy starts at 0//
-	//alert(allergy_count); commenting this part out because I didn't need the window box display for the code to function -->
-	//var declares variables, values, and what you want the variable to do//
-	//In the next case, it is used to declare the value of cold starts at 0//
+	var totalQuestions =8;
+	//I had to add this variable in order to ensure that both of the percentages added to a 100//
+        var allergy_count = 0;
+	//var is used to declare variables, values, and what you want the variable to do//
+	//In this case is used to declare the value of allergy starts at 0//
+        var cold_count = 0;
+	//var is used to declare variables, values, and what you want the variable to do//
+	//In this case is used to declare the value of cold starts at 0//
 
- 	//functions to compute allergy and cold counts when users click on buttons accordingly//
-	 function allergyAdd(){
-	
+
+        function allergyAdd(){
             allergy_count = allergy_count + 1;
-		alert(allergy_count);}
+	//Increases the count for allergy//
+        }
 
-/*This button increases the count for allergy when user presses button associated with
-allergy symptoms. */
-
-		//This button increases the count for cold when user presses button associated with cold symptom//
         function coldAdd(){
             cold_count = cold_count + 1;
+	//Increases the count for cold//
         }
-	
-//Put the code you want to execute between {}//
-	function showResult(){
-		var allergyPercent = (allergy_count/8)*100
-   	var coldPercent = (cold_count/8)*100}
-	        // Calculate percentages//
 
-//this code establishes the content of the results by setting the formula.//
-
-	{resultText.innerHTML = "Percentage of allergies =" + allergyPercent + "%" + "<br> Percentage of cold =" + coldPercent + "%"}
-	
-	//This is the function to display the results.//
-	{var resultText = document.getElementById("results")}
-
-	//this code sends the test taker to the results page//
-	{location.href= "#results"}
-
-		//Function to restart the test//
-		function restartTest() {allergy_count = 0;
-		cold_count = 0;}
-
-	//Send the person back to the first page//
-	    		location.href = "#content0";
+	function getResult() {
+	//Dsiplays and calculates percentages//
+		var allergyPercent=(allergy_count/totalQuestions)*100;
+		//Divides allergy count by 6(number of question) and turns into percentage//
+		var coldPercent = (cold_count/totalQuestions)*100;
+		//Divides cold count by 6(number of question) and turns into percentage/
+		var totalPercent = allergyPercent + coldPercent;
+		//I noticed that if you go to a previous question and answer the percentage exceed the 100 percent value. So I looked up how to fix this//
+		//Check if combined total is not equal to 100//
+    		 if (totalPercent !== 100) {
+		//Functions to fix percentages if they do not equal 100//
+        		var scale = 100 / totalPercent;
+			 //Scales both vairables so they equal to 100//
+       			allergyPercent *= scale;
+			coldPercent *= scale;
+		}
+		var resultText = document.getElementById("resultText");
+		//Function to display the results. Grammar is very important here! It is also used in the results page//
+        resultText.innerHTML = "Probability it is allergies = " + allergyPercent.toFixed(2) + "%<br> Probability it is a cold = " + coldPercent.toFixed(2) + "%";
+		//Added the percentage signs//
+		//Tells the system how to display results. Two decimal points allowed//
+	}
+	function restartTest() {
+	//Function to restart the test
+ 		allergy_count = 0;
+		cold_count = 0;
+    		//Reset the counts of the variables//
+    		location.href = "#content0";
+		//Send the person back to the first page//
+	}
 
 
   </script>
