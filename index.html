@@ -49,8 +49,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 	//This code declares a total number of questions and inital values for allergy cold indication.//
-        var allergy_count = 0;
-        var cold_count = 0;
+	{ var allergy_count = 0;
+        var cold_count = 0; }
 //var declares variables, values, and what you want the variable to do//
 	//In this case, it is used to declare the value of allergy starts at 0//
 	//alert(allergy_count); commenting this part out because I didn't need the window box display for the code to function -->
@@ -58,7 +58,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//In the next case, it is used to declare the value of cold starts at 0//
 
  	//functions to compute allergy and cold counts when users click on buttons accordingly//
-        function allergyAdd()
+	{ function allergyAdd() }
 
 /*This button increases the count for allergy when user presses button associated with
 allergy symptoms. */
@@ -80,9 +80,20 @@ allergy symptoms. */
 	var allergyPercent = (allergy_count/8)*100
    	var coldPercent = (cold_count/8)*100
 
-//this function edits the variable resultText, which refers to the paragraph titled "results" on results page 9.//
+//this code establishes the content of the results by setting the formula.//
 
-resultText.innerHTML = "Percentage of allergies =" + allergyPercent + "%" + "<br> Percentage of cold =" + coldPercent + "%";
+	{resultText.innerHTML = "Percentage of allergies =" + allergyPercent + "%" + "<br> Percentage of cold =" + coldPercent + "%"}
+	
+	//This is the function to display the results.//
+	{var resultText = document.getElementById("results")}
+
+	//this code sends the test taker to the results page//
+	{location.href= "#results"}
+
+		//Function to restart the test//
+		function restartTest() {allergy_count = 0;
+		cold_count = 0;}
+
 
   </script>
 
