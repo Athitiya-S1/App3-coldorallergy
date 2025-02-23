@@ -52,9 +52,9 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
 	function getResult() {
 	//Dsiplays and calculates percentages//
 		var allergyPercent=(allergy_count/totalQuestions)*100;
-		//Divides allergy count by 6(number of question) and turns into percentage//
+		//Divides allergy count by 8(number of question) and turns into percentage//
 		var coldPercent = (cold_count/totalQuestions)*100;
-		//Divides cold count by 6(number of question) and turns into percentage/
+		//Divides cold count by 8(number of question) and turns into percentage/
 		var totalPercent = allergyPercent + coldPercent;
 		//I noticed that if you go to a previous question and answer the percentage exceed the 100 percent value. So I looked up how to fix this//
 		//Check if combined total is not equal to 100//
