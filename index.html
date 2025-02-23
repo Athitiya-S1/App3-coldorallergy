@@ -228,6 +228,30 @@ I want to make the buttons rainbow themed! So that's what I'll change it to... R
 	<a href="#results" onclick="allergyAdd();" class="w3-btn w3-green">No</a>
 
 </div>
+		 </div><!-- /content -->
+
+
+<div class="page" id="results">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+
+	<!--Page eight is for displaying results
+	Results will be displayed and computed after hitting the "See Results" button on page-->
+	
+	<div id="content" class="w3-container">
+			<p>Click the button below to find out if you have cold or allergies!</p>
+		</div>
+	<div id="resultContainer" class="w3-container">
+		<button onclick="getResult();" class="w3-button w3-white w3-round w3-hover-green"><b>Results</b></button>
+		<!--Button to get the result using the variables stated above-->
+		
+		<p id="results"></p>
+		<button onclick="restartTest();" class="w3-button w3-white w3-round w3-hover-red"><b>Restart Test</b></button>
+		<!--Button and location so the function can perform the action--> 	
+		
+	</div>
+
 
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
